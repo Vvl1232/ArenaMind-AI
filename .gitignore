@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Coverage
+coverage/
+.coverage
+htmlcov/
+
+# Vercel
+.vercel/
+
+# Missing exclusions
+.pytest_cache/
+.pytest_cache/**
+.mypy_cache/
+.ruff_cache/
+*.pyd
+.cache/
+.next/
+.env.production
+.env.development
+
+# Exception: allow frontend production env so Vercel build picks up backend URL
+!frontend/.env.production

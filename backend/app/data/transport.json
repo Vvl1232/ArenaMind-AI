@@ -1,0 +1,170 @@
+{
+  "timestamp": "2026-07-19T18:30:00Z",
+  "metro": [
+    {
+      "id": "MT1",
+      "line": "NJ Transit - Meadowlands Rail",
+      "station": "Meadowlands Station",
+      "distance_km": 0.5,
+      "walk_time_min": 7,
+      "status": "running",
+      "frequency_min": 8,
+      "next_departures": ["18:38", "18:46", "18:54", "19:02"],
+      "capacity_percent": 72,
+      "fare": "$5.50",
+      "accessible": true,
+      "destination": "Secaucus Junction",
+      "notes": "Connect to NJ Transit / Amtrak / PATH at Secaucus"
+    },
+    {
+      "id": "MT2",
+      "line": "NJ Transit - Special Event Express",
+      "station": "Meadowlands Station",
+      "distance_km": 0.5,
+      "walk_time_min": 7,
+      "status": "running",
+      "frequency_min": 12,
+      "next_departures": ["18:42", "18:54", "19:06"],
+      "capacity_percent": 55,
+      "fare": "$7.00",
+      "accessible": true,
+      "destination": "Penn Station New York",
+      "notes": "Non-stop express to Manhattan — FIFA special service"
+    }
+  ],
+  "bus": [
+    {
+      "id": "BUS1",
+      "route": "FIFA Shuttle A",
+      "stop": "North Lot Bus Terminal",
+      "distance_km": 0.3,
+      "walk_time_min": 4,
+      "status": "running",
+      "frequency_min": 10,
+      "next_departures": ["18:35", "18:45", "18:55"],
+      "capacity_percent": 60,
+      "fare": "Free (FIFA Pass)",
+      "accessible": true,
+      "destination": "Times Square, NYC",
+      "notes": "Complimentary shuttle for FIFA ticket holders"
+    },
+    {
+      "id": "BUS2",
+      "route": "FIFA Shuttle B",
+      "stop": "South Lot Bus Terminal",
+      "distance_km": 0.4,
+      "walk_time_min": 6,
+      "status": "running",
+      "frequency_min": 15,
+      "next_departures": ["18:40", "18:55", "19:10"],
+      "capacity_percent": 45,
+      "fare": "Free (FIFA Pass)",
+      "accessible": true,
+      "destination": "Newark Airport (EWR)",
+      "notes": "Direct service to Newark Liberty International Airport"
+    },
+    {
+      "id": "BUS3",
+      "route": "NJ Transit 160",
+      "stop": "Route 120 & Paterson Plank Rd",
+      "distance_km": 1.2,
+      "walk_time_min": 15,
+      "status": "running",
+      "frequency_min": 20,
+      "next_departures": ["18:50", "19:10", "19:30"],
+      "capacity_percent": 70,
+      "fare": "$3.50",
+      "accessible": true,
+      "destination": "Port Authority Bus Terminal, NYC",
+      "notes": "Regular NJ Transit service"
+    }
+  ],
+  "taxi": [
+    {
+      "id": "TX1",
+      "service": "Official FIFA Taxi Stand",
+      "location": "West Lot Pickup Zone",
+      "distance_km": 0.2,
+      "walk_time_min": 3,
+      "status": "available",
+      "estimated_wait_min": 12,
+      "estimated_fare_to_nyc": "$55-$75",
+      "accessible_vehicles": true,
+      "notes": "Licensed taxi stand — fixed rates to major destinations"
+    }
+  ],
+  "rideshare": [
+    {
+      "id": "RS1",
+      "service": "Uber",
+      "pickup_zone": "East Lot Rideshare Zone",
+      "distance_km": 0.3,
+      "walk_time_min": 5,
+      "status": "surge_pricing",
+      "surge_multiplier": 2.4,
+      "estimated_wait_min": 18,
+      "estimated_fare_to_nyc": "$45-$90",
+      "accessible_vehicles": true,
+      "notes": "Surge pricing active due to event — consider metro for better value"
+    },
+    {
+      "id": "RS2",
+      "service": "Lyft",
+      "pickup_zone": "East Lot Rideshare Zone",
+      "distance_km": 0.3,
+      "walk_time_min": 5,
+      "status": "surge_pricing",
+      "surge_multiplier": 2.1,
+      "estimated_wait_min": 15,
+      "estimated_fare_to_nyc": "$40-$85",
+      "accessible_vehicles": true,
+      "notes": "Surge pricing active — shared rides available at lower cost"
+    }
+  ],
+  "walking_routes": [
+    {
+      "id": "WR1",
+      "name": "Meadowlands Station Walk",
+      "from": "Gate A1",
+      "to": "Meadowlands Rail Station",
+      "distance_km": 0.5,
+      "time_min": 7,
+      "accessible": true,
+      "lit": true,
+      "security_patrolled": true,
+      "notes": "Follow FIFA signage — blue markers"
+    },
+    {
+      "id": "WR2",
+      "name": "Bus Terminal North Walk",
+      "from": "Gate A2",
+      "to": "North Lot Bus Terminal",
+      "distance_km": 0.3,
+      "time_min": 4,
+      "accessible": true,
+      "lit": true,
+      "security_patrolled": true,
+      "notes": "Shortest route to bus shuttle service"
+    },
+    {
+      "id": "WR3",
+      "name": "Rideshare Zone Walk",
+      "from": "Gate B1",
+      "to": "East Lot Rideshare Zone",
+      "distance_km": 0.3,
+      "time_min": 5,
+      "accessible": true,
+      "lit": true,
+      "security_patrolled": true,
+      "notes": "Follow yellow markers to rideshare pickup"
+    }
+  ],
+  "parking_status": {
+    "lots_open": 5,
+    "total_spaces": 15000,
+    "available_spaces": 4515,
+    "exit_congestion": "moderate",
+    "estimated_exit_time_min": 25,
+    "recommendation": "Use Lot C or Lot E exits for fastest departure. Avoid Lot A — congestion expected."
+  }
+}

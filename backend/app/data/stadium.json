@@ -1,0 +1,71 @@
+{
+  "stadium": {
+    "name": "MetLife Stadium",
+    "location": "East Rutherford, New Jersey, USA",
+    "capacity": 82500,
+    "event": "FIFA World Cup 2026 - Final",
+    "coordinates": { "lat": 40.8128, "lng": -74.0742 }
+  },
+  "gates": [
+    { "id": "GA1", "name": "Gate A1", "zone": "North", "floor": 1, "status": "open", "crowd_level": 72, "wait_time_min": 8, "accessible": true, "coordinates": { "lat": 40.8138, "lng": -74.0752 } },
+    { "id": "GA2", "name": "Gate A2", "zone": "North", "floor": 1, "status": "open", "crowd_level": 45, "wait_time_min": 4, "accessible": true, "coordinates": { "lat": 40.8140, "lng": -74.0748 } },
+    { "id": "GB1", "name": "Gate B1", "zone": "East", "floor": 1, "status": "open", "crowd_level": 88, "wait_time_min": 14, "accessible": true, "coordinates": { "lat": 40.8132, "lng": -74.0730 } },
+    { "id": "GB2", "name": "Gate B2", "zone": "East", "floor": 1, "status": "open", "crowd_level": 55, "wait_time_min": 6, "accessible": false, "coordinates": { "lat": 40.8130, "lng": -74.0728 } },
+    { "id": "GB12", "name": "Gate B12", "zone": "East", "floor": 2, "status": "open", "crowd_level": 30, "wait_time_min": 2, "accessible": true, "coordinates": { "lat": 40.8134, "lng": -74.0726 } },
+    { "id": "GC1", "name": "Gate C1", "zone": "South", "floor": 1, "status": "open", "crowd_level": 60, "wait_time_min": 7, "accessible": true, "coordinates": { "lat": 40.8118, "lng": -74.0738 } },
+    { "id": "GC2", "name": "Gate C2", "zone": "South", "floor": 1, "status": "closed", "crowd_level": 0, "wait_time_min": 0, "accessible": true, "coordinates": { "lat": 40.8116, "lng": -74.0742 } },
+    { "id": "GD1", "name": "Gate D1", "zone": "West", "floor": 1, "status": "open", "crowd_level": 40, "wait_time_min": 3, "accessible": true, "coordinates": { "lat": 40.8126, "lng": -74.0758 } },
+    { "id": "GD2", "name": "Gate D2", "zone": "West", "floor": 1, "status": "open", "crowd_level": 35, "wait_time_min": 3, "accessible": true, "coordinates": { "lat": 40.8124, "lng": -74.0760 } },
+    { "id": "GVIP", "name": "VIP Gate", "zone": "West", "floor": 1, "status": "open", "crowd_level": 15, "wait_time_min": 1, "accessible": true, "coordinates": { "lat": 40.8128, "lng": -74.0762 } }
+  ],
+  "food_courts": [
+    { "id": "FC1", "name": "FIFA Fan Feast", "zone": "North", "floor": 1, "cuisine": "International", "price_range": "$8-$25", "avg_price": 15, "wait_time_min": 12, "crowd_level": 75, "items": ["Burgers", "Hot Dogs", "Pizza", "Nachos", "Fries"], "halal": true, "vegan": true, "coordinates": { "lat": 40.8136, "lng": -74.0748 } },
+    { "id": "FC2", "name": "Goal Line Grill", "zone": "East", "floor": 1, "cuisine": "American BBQ", "price_range": "$10-$30", "avg_price": 18, "wait_time_min": 15, "crowd_level": 82, "items": ["BBQ Ribs", "Pulled Pork", "Brisket", "Coleslaw"], "halal": false, "vegan": false, "coordinates": { "lat": 40.8130, "lng": -74.0732 } },
+    { "id": "FC3", "name": "World Cup Bites", "zone": "South", "floor": 1, "cuisine": "Mexican", "price_range": "$6-$18", "avg_price": 12, "wait_time_min": 8, "crowd_level": 55, "items": ["Tacos", "Burritos", "Quesadillas", "Churros"], "halal": false, "vegan": true, "coordinates": { "lat": 40.8120, "lng": -74.0740 } },
+    { "id": "FC4", "name": "Penalty Box Pizza", "zone": "West", "floor": 2, "cuisine": "Italian", "price_range": "$8-$22", "avg_price": 14, "wait_time_min": 10, "crowd_level": 60, "items": ["Margherita", "Pepperoni", "Calzone", "Garlic Knots"], "halal": false, "vegan": true, "coordinates": { "lat": 40.8126, "lng": -74.0756 } },
+    { "id": "FC5", "name": "Hat-Trick Café", "zone": "North", "floor": 2, "cuisine": "Café & Snacks", "price_range": "$4-$15", "avg_price": 9, "wait_time_min": 5, "crowd_level": 40, "items": ["Coffee", "Sandwiches", "Pretzels", "Ice Cream", "Smoothies"], "halal": true, "vegan": true, "coordinates": { "lat": 40.8139, "lng": -74.0744 } },
+    { "id": "FC6", "name": "Golden Boot Sushi", "zone": "East", "floor": 2, "cuisine": "Japanese", "price_range": "$12-$35", "avg_price": 22, "wait_time_min": 18, "crowd_level": 45, "items": ["Sushi Rolls", "Ramen", "Edamame", "Tempura"], "halal": false, "vegan": true, "coordinates": { "lat": 40.8133, "lng": -74.0729 } }
+  ],
+  "restrooms": [
+    { "id": "R1", "name": "Restroom A-North", "zone": "North", "floor": 1, "accessible": true, "crowd_level": 65, "wait_time_min": 5, "family_room": true, "coordinates": { "lat": 40.8137, "lng": -74.0750 } },
+    { "id": "R2", "name": "Restroom B-East", "zone": "East", "floor": 1, "accessible": true, "crowd_level": 80, "wait_time_min": 10, "family_room": false, "coordinates": { "lat": 40.8131, "lng": -74.0731 } },
+    { "id": "R3", "name": "Restroom C-South", "zone": "South", "floor": 1, "accessible": true, "crowd_level": 40, "wait_time_min": 3, "family_room": true, "coordinates": { "lat": 40.8119, "lng": -74.0739 } },
+    { "id": "R4", "name": "Restroom D-West", "zone": "West", "floor": 1, "accessible": true, "crowd_level": 50, "wait_time_min": 4, "family_room": false, "coordinates": { "lat": 40.8125, "lng": -74.0757 } },
+    { "id": "R5", "name": "Restroom Upper-North", "zone": "North", "floor": 2, "accessible": true, "crowd_level": 30, "wait_time_min": 2, "family_room": true, "coordinates": { "lat": 40.8138, "lng": -74.0746 } },
+    { "id": "R6", "name": "Restroom Upper-East", "zone": "East", "floor": 2, "accessible": false, "crowd_level": 25, "wait_time_min": 1, "family_room": false, "coordinates": { "lat": 40.8132, "lng": -74.0728 } },
+    { "id": "R7", "name": "Restroom Upper-South", "zone": "South", "floor": 2, "accessible": true, "crowd_level": 20, "wait_time_min": 1, "family_room": false, "coordinates": { "lat": 40.8117, "lng": -74.0741 } },
+    { "id": "R8", "name": "Restroom Upper-West", "zone": "West", "floor": 2, "accessible": true, "crowd_level": 35, "wait_time_min": 2, "family_room": true, "coordinates": { "lat": 40.8127, "lng": -74.0759 } }
+  ],
+  "medical": [
+    { "id": "M1", "name": "Main Medical Center", "zone": "North", "floor": 1, "type": "full_service", "staff_count": 8, "available": true, "services": ["First Aid", "Emergency Care", "Defibrillator", "Wheelchair", "Oxygen"], "coordinates": { "lat": 40.8139, "lng": -74.0746 } },
+    { "id": "M2", "name": "East First Aid", "zone": "East", "floor": 1, "type": "first_aid", "staff_count": 4, "available": true, "services": ["First Aid", "Bandaging", "Ice Packs"], "coordinates": { "lat": 40.8133, "lng": -74.0730 } },
+    { "id": "M3", "name": "South Medical Post", "zone": "South", "floor": 1, "type": "first_aid", "staff_count": 3, "available": true, "services": ["First Aid", "Defibrillator", "Basic Medication"], "coordinates": { "lat": 40.8118, "lng": -74.0741 } },
+    { "id": "M4", "name": "West Medical Bay", "zone": "West", "floor": 1, "type": "full_service", "staff_count": 6, "available": true, "services": ["First Aid", "Emergency Care", "Defibrillator", "Stretcher"], "coordinates": { "lat": 40.8126, "lng": -74.0758 } },
+    { "id": "M5", "name": "Upper Level Aid Station", "zone": "North", "floor": 2, "type": "first_aid", "staff_count": 2, "available": true, "services": ["First Aid", "Ice Packs", "Basic Medication"], "coordinates": { "lat": 40.8140, "lng": -74.0744 } }
+  ],
+  "parking": [
+    { "id": "P1", "name": "Lot A - Premium", "zone": "North", "total_spaces": 2500, "available_spaces": 320, "price": "$75", "distance_to_gate_min": 5, "accessible_spaces": 50, "ev_charging": true, "coordinates": { "lat": 40.8148, "lng": -74.0755 } },
+    { "id": "P2", "name": "Lot B - Standard", "zone": "East", "total_spaces": 4000, "available_spaces": 850, "price": "$50", "distance_to_gate_min": 10, "accessible_spaces": 80, "ev_charging": true, "coordinates": { "lat": 40.8140, "lng": -74.0718 } },
+    { "id": "P3", "name": "Lot C - Economy", "zone": "South", "total_spaces": 5000, "available_spaces": 1200, "price": "$35", "distance_to_gate_min": 15, "accessible_spaces": 100, "ev_charging": false, "coordinates": { "lat": 40.8108, "lng": -74.0738 } },
+    { "id": "P4", "name": "Lot D - VIP", "zone": "West", "total_spaces": 500, "available_spaces": 45, "price": "$150", "distance_to_gate_min": 3, "accessible_spaces": 20, "ev_charging": true, "coordinates": { "lat": 40.8130, "lng": -74.0770 } },
+    { "id": "P5", "name": "Lot E - Overflow", "zone": "South", "total_spaces": 3000, "available_spaces": 2100, "price": "$25", "distance_to_gate_min": 20, "accessible_spaces": 60, "ev_charging": false, "coordinates": { "lat": 40.8098, "lng": -74.0745 } }
+  ],
+  "emergency_exits": [
+    { "id": "EX1", "name": "Emergency Exit North-1", "zone": "North", "floor": 1, "status": "clear", "leads_to": "Lot A", "accessible": true, "coordinates": { "lat": 40.8141, "lng": -74.0752 } },
+    { "id": "EX2", "name": "Emergency Exit North-2", "zone": "North", "floor": 2, "status": "clear", "leads_to": "Lot A", "accessible": true, "coordinates": { "lat": 40.8142, "lng": -74.0748 } },
+    { "id": "EX3", "name": "Emergency Exit East-1", "zone": "East", "floor": 1, "status": "clear", "leads_to": "Lot B", "accessible": true, "coordinates": { "lat": 40.8134, "lng": -74.0724 } },
+    { "id": "EX4", "name": "Emergency Exit South-1", "zone": "South", "floor": 1, "status": "clear", "leads_to": "Lot C", "accessible": true, "coordinates": { "lat": 40.8114, "lng": -74.0738 } },
+    { "id": "EX5", "name": "Emergency Exit South-2", "zone": "South", "floor": 2, "status": "clear", "leads_to": "Lot C", "accessible": false, "coordinates": { "lat": 40.8115, "lng": -74.0742 } },
+    { "id": "EX6", "name": "Emergency Exit West-1", "zone": "West", "floor": 1, "status": "clear", "leads_to": "Lot D", "accessible": true, "coordinates": { "lat": 40.8124, "lng": -74.0764 } }
+  ],
+  "volunteer_stations": [
+    { "id": "VS1", "name": "Welcome Hub North", "zone": "North", "floor": 1, "volunteers_on_duty": 12, "services": ["Directions", "Ticket Help", "Lost & Found", "Translation"], "languages": ["English", "Spanish", "French"], "coordinates": { "lat": 40.8137, "lng": -74.0751 } },
+    { "id": "VS2", "name": "Info Desk East", "zone": "East", "floor": 1, "volunteers_on_duty": 8, "services": ["Directions", "Accessibility Help", "Translation"], "languages": ["English", "Arabic", "Hindi"], "coordinates": { "lat": 40.8131, "lng": -74.0733 } },
+    { "id": "VS3", "name": "Help Center South", "zone": "South", "floor": 1, "volunteers_on_duty": 10, "services": ["Directions", "First Aid Guide", "Lost & Found", "Translation"], "languages": ["English", "Spanish", "Japanese"], "coordinates": { "lat": 40.8119, "lng": -74.0740 } },
+    { "id": "VS4", "name": "Assistance Point West", "zone": "West", "floor": 1, "volunteers_on_duty": 6, "services": ["Directions", "VIP Assistance", "Accessibility Help"], "languages": ["English", "French", "Arabic"], "coordinates": { "lat": 40.8125, "lng": -74.0759 } }
+  ],
+  "lost_and_found": [
+    { "id": "LF1", "name": "Main Lost & Found Office", "zone": "North", "floor": 1, "open": true, "hours": "10:00 AM - 11:00 PM", "phone": "+1-555-FIFA-LOST", "coordinates": { "lat": 40.8138, "lng": -74.0749 } },
+    { "id": "LF2", "name": "South Collection Point", "zone": "South", "floor": 1, "open": true, "hours": "12:00 PM - 10:00 PM", "phone": "+1-555-FIFA-LOST", "coordinates": { "lat": 40.8118, "lng": -74.0741 } }
+  ]
+}

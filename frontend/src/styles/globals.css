@@ -1,0 +1,310 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand Colors (Static across themes) */
+    --color-fifa-purple: 91 45 142;
+    --color-fifa-magenta: 212 20 90;
+    --color-fifa-teal: 0 180 216;
+    --color-fifa-gold: 255 182 39;
+
+    /* Theme: Light */
+    --color-bg-primary: 248 250 252; /* #f8fafc */
+    --color-bg-secondary: 241 245 249; /* #f1f5f9 */
+    --color-bg-elevated: 255 255 255; /* #ffffff */
+
+    --color-text-primary: 26 31 46; /* #1a1f2e */
+    --color-text-secondary: 71 85 105; /* #475569 */
+    --color-text-tertiary: 148 163 184; /* #94a3b8 */
+
+    --color-border-default: 226 232 240; /* #e2e8f0 */
+    --color-border-subtle: 241 245 249; /* #f1f5f9 */
+
+    --color-accent-primary: 91 45 142; /* #5B2D8E */
+    --color-status-high: 220 38 38; /* #dc2626 */
+    --color-status-moderate: 217 119 6; /* #d97706 */
+    --color-status-low: 5 150 105; /* #059669 */
+
+    /* Radii Scale (One scale consistently used) */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-glow: 0 0 20px rgba(91, 45, 142, 0.3);
+    --shadow-glow-magenta: 0 0 20px rgba(212, 20, 90, 0.3);
+    --shadow-glow-teal: 0 0 20px rgba(0, 180, 216, 0.3);
+  }
+
+  .dark {
+    /* Theme: Dark */
+    /* Theme: Dark */
+    --color-bg-primary: 26 29 35; /* #1a1d23 */
+    --color-bg-secondary: 35 39 47; /* #23272f */
+    --color-bg-elevated: 45 50 59; /* #2d323b */
+
+    --color-text-primary: 232 234 237; /* #e8eaed */
+    --color-text-secondary: 154 160 166; /* #9aa0a6 */
+    --color-text-tertiary: 95 99 104; /* #5f6368 */
+
+    --color-border-default: 63 68 78; /* #3f444e */
+    --color-border-subtle: 45 50 59; /* #2d323b */
+
+    --color-accent-primary: 163 125 246; /* #a37df6 */
+    --color-status-high: 248 113 113; /* #f87171 */
+    --color-status-moderate: 251 191 36; /* #fbbf24 */
+    --color-status-low: 52 211 153; /* #34d399 */
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: rgb(var(--color-bg-primary));
+    color: rgb(var(--color-text-primary));
+    font-family: "Outfit", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--color-bg-secondary));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--color-fifa-purple));
+    border-radius: var(--radius-full);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--color-fifa-magenta));
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-bg-elevated border border-border rounded-2xl transition-all duration-300;
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.05),
+      0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  }
+
+  .dark .glass-card {
+    box-shadow:
+      0 8px 16px -4px rgba(0, 0, 0, 0.2),
+      inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-card-hover {
+    @apply glass-card hover:border-accent-primary/50 hover:shadow-glow transition-all duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-fifa-gradient;
+  }
+
+  .gradient-border {
+    @apply border border-transparent;
+    background-clip: padding-box;
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      rgb(var(--color-fifa-purple)),
+      rgb(var(--color-fifa-magenta)),
+      rgb(var(--color-fifa-teal))
+    );
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    pointer-events: none;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-semibold text-white bg-fifa-gradient 
+           hover:opacity-90 transition-all duration-300 
+           shadow-glow hover:shadow-glow-magenta active:scale-95
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fifa-purple focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-lg font-semibold text-text-primary 
+           bg-bg-elevated border border-border
+           hover:border-accent-primary/50 hover:shadow-glow 
+           transition-all duration-300 active:scale-95
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg bg-bg-secondary border border-border 
+           text-text-primary placeholder-text-tertiary
+           focus:outline-none focus:border-accent-primary focus:shadow-glow
+           transition-all duration-300;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-success {
+    @apply badge bg-status-low/10 text-status-low border border-status-low/20;
+  }
+
+  .badge-warning {
+    @apply badge bg-status-moderate/10 text-status-moderate border border-status-moderate/20;
+  }
+
+  .badge-danger {
+    @apply badge bg-status-high/10 text-status-high border border-status-high/20;
+  }
+
+  .badge-info {
+    @apply badge bg-fifa-teal/20 text-fifa-teal border border-fifa-teal/30;
+  }
+
+  .kpi-value {
+    @apply text-3xl font-bold gradient-text;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold text-text-primary mb-6;
+  }
+
+  .chat-bubble-ai {
+    @apply bg-card/90 border border-border rounded-xl rounded-tl-md p-4 shadow-sm;
+  }
+
+  .chat-bubble-user {
+    @apply bg-fifa-purple/10 border border-fifa-purple/30 rounded-xl rounded-tr-md p-4 shadow-sm;
+  }
+
+  /* Leaflet overrides */
+  .leaflet-container {
+    background: rgb(var(--color-bg-secondary)) !important;
+    border-radius: var(--radius-xl);
+  }
+
+  .leaflet-tile-pane {
+    filter: brightness(0.95) contrast(1.05) saturate(0.8);
+  }
+  .dark .leaflet-tile-pane {
+    filter: brightness(0.6) contrast(1.2) saturate(0.3) hue-rotate(180deg);
+  }
+
+  .leaflet-control-zoom a {
+    background-color: rgb(var(--color-bg-card)) !important;
+    color: rgb(var(--color-text-primary)) !important;
+    border-color: rgb(var(--color-border)) !important;
+  }
+
+  /* Markdown content styling inside chat */
+  .markdown-content h1,
+  .markdown-content h2,
+  .markdown-content h3 {
+    @apply font-bold text-text-primary mt-3 mb-2;
+  }
+  .markdown-content h1 {
+    @apply text-xl;
+  }
+  .markdown-content h2 {
+    @apply text-lg;
+  }
+  .markdown-content h3 {
+    @apply text-base;
+  }
+  .markdown-content p {
+    @apply mb-2 leading-relaxed;
+  }
+  .markdown-content ul,
+  .markdown-content ol {
+    @apply ml-4 mb-2 space-y-1;
+  }
+  .markdown-content ul {
+    @apply list-disc;
+  }
+  .markdown-content ol {
+    @apply list-decimal;
+  }
+  .markdown-content li {
+    @apply leading-relaxed;
+  }
+  .markdown-content strong {
+    @apply font-semibold;
+  }
+  .markdown-content code {
+    @apply bg-bg-secondary px-1.5 py-0.5 rounded text-fifa-teal text-sm;
+  }
+  .markdown-content pre {
+    @apply bg-bg-secondary p-3 rounded-lg mb-2 overflow-x-auto border border-border;
+  }
+  .markdown-content a {
+    @apply text-fifa-teal hover:underline;
+  }
+  .markdown-content blockquote {
+    @apply border-l-4 border-accent-primary pl-4 italic text-text-secondary;
+  }
+  .markdown-content hr {
+    @apply border-border my-4;
+  }
+  .markdown-content table {
+    @apply w-full border-collapse mb-2;
+  }
+  .markdown-content th {
+    @apply bg-bg-secondary p-2 text-left font-semibold border border-border;
+  }
+  .markdown-content td {
+    @apply p-2 border border-border;
+  }
+}
+
+@layer utilities {
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(91, 45, 142, 0.1),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+}

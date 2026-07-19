@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+groq
+pydantic
+pydantic-settings
+python-dotenv
+slowapi
+pytest
+pytest-asyncio
+httpx
+black
+ruff
+isort
+mypy
+pytest-cov
+pytest-mock

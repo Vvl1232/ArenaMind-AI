@@ -1,0 +1,86 @@
+{
+  "timestamp": "2026-07-19T18:30:00Z",
+  "overall": {
+    "total_attendance": 68450,
+    "capacity": 82500,
+    "occupancy_percent": 83,
+    "risk_level": "moderate",
+    "average_density": 0.72,
+    "ingress_rate_per_min": 320,
+    "egress_rate_per_min": 45
+  },
+  "zones": [
+    {
+      "zone_id": "Z-NORTH",
+      "name": "North Stand",
+      "capacity": 20600,
+      "current_count": 18200,
+      "occupancy_percent": 88,
+      "density": 0.85,
+      "risk_level": "high",
+      "congestion_points": ["Gate A1 corridor", "Food Court FC1 area"],
+      "wait_time_entry_min": 8,
+      "temperature_celsius": 28,
+      "alerts": ["High density near Gate A1 — consider redirecting to Gate A2"],
+      "recommendation": "Deploy 4 additional volunteers to Gate A1. Open auxiliary entrance near Section 112."
+    },
+    {
+      "zone_id": "Z-EAST",
+      "name": "East Stand",
+      "capacity": 20600,
+      "current_count": 17800,
+      "occupancy_percent": 86,
+      "density": 0.82,
+      "risk_level": "high",
+      "congestion_points": ["Gate B1 entrance", "Goal Line Grill queue"],
+      "wait_time_entry_min": 14,
+      "temperature_celsius": 29,
+      "alerts": ["Gate B1 at 88% capacity — critical threshold approaching", "Food court queue exceeding 15 min wait"],
+      "recommendation": "Redirect fans to Gate B12 (Floor 2). Deploy crowd control team to Goal Line Grill."
+    },
+    {
+      "zone_id": "Z-SOUTH",
+      "name": "South Stand",
+      "capacity": 20600,
+      "current_count": 15450,
+      "occupancy_percent": 75,
+      "density": 0.62,
+      "risk_level": "low",
+      "congestion_points": [],
+      "wait_time_entry_min": 4,
+      "temperature_celsius": 27,
+      "alerts": [],
+      "recommendation": "Zone operating normally. Can absorb overflow from North and East zones."
+    },
+    {
+      "zone_id": "Z-WEST",
+      "name": "West Stand",
+      "capacity": 20700,
+      "current_count": 17000,
+      "occupancy_percent": 82,
+      "density": 0.70,
+      "risk_level": "moderate",
+      "congestion_points": ["VIP entrance corridor"],
+      "wait_time_entry_min": 5,
+      "temperature_celsius": 27,
+      "alerts": ["VIP corridor experiencing moderate congestion"],
+      "recommendation": "Monitor VIP gate flow. Consider opening secondary VIP channel."
+    }
+  ],
+  "hotspots": [
+    { "location": "Gate B1 Entrance", "severity": "critical", "density": 0.92, "action_required": "Immediate crowd redirection needed" },
+    { "location": "Gate A1 Corridor", "severity": "high", "density": 0.85, "action_required": "Deploy additional staff" },
+    { "location": "Goal Line Grill Queue", "severity": "high", "density": 0.80, "action_required": "Open secondary service line" },
+    { "location": "Restroom B-East", "severity": "moderate", "density": 0.75, "action_required": "Redirect to Upper Level restrooms" },
+    { "location": "North Concourse", "severity": "moderate", "density": 0.70, "action_required": "Monitor and manage flow" }
+  ],
+  "incidents": [
+    { "id": "INC001", "type": "medical", "zone": "East", "status": "resolved", "time": "17:45:00Z", "description": "Fan fainted near Section 210 — paramedics responded in 3 min" },
+    { "id": "INC002", "type": "crowd_surge", "zone": "North", "status": "active", "time": "18:15:00Z", "description": "Crowd surge detected near Gate A1 during team walkout" },
+    { "id": "INC003", "type": "lost_child", "zone": "South", "status": "resolved", "time": "18:00:00Z", "description": "Lost child reunited with family at Volunteer Station VS3" }
+  ],
+  "predictions": [
+    { "time": "19:00:00Z", "event": "Halftime", "expected_movement": "Major egress from stands to concourse", "risk": "high", "recommendation": "Pre-position volunteers at all food courts and restrooms. Open all concourse gates." },
+    { "time": "20:30:00Z", "event": "Full Time", "expected_movement": "Mass egress", "risk": "critical", "recommendation": "Activate full egress plan. Open all emergency exits. Stage transport coordination." }
+  ]
+}
