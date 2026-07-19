@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
  */
 
 import { memo } from "react";
-import { motion } from "framer-motion";
+import AnimatedCard from "./AnimatedCard";
 import { HiCheckCircle, HiXCircle } from "react-icons/hi";
 
 const AccessibilityCard = ({ facility, type, delay = 0 }) => {
@@ -16,12 +16,7 @@ const AccessibilityCard = ({ facility, type, delay = 0 }) => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay, duration: 0.3 }}
-      className="glass-card-hover p-4"
-    >
+    <AnimatedCard delay={delay}>
       <div className="flex items-start justify-between mb-2">
         <div>
           <p className="text-xs text-text-muted mb-0.5">
@@ -71,7 +66,7 @@ const AccessibilityCard = ({ facility, type, delay = 0 }) => {
           </p>
         </div>
       )}
-    </motion.div>
+    </AnimatedCard>
   );
 };
 

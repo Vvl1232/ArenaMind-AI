@@ -69,7 +69,7 @@ const Sidebar = ({ isOpen, onClose }) => {
         </div>
       </Link>
 
-      <nav className="flex-1 space-y-1">
+      <nav className="flex-1 space-y-1" aria-label="Main Navigation">
         {navItems.map((item) => (
           <NavLink
             key={item.path}

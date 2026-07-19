@@ -7,7 +7,8 @@ Provides AI-powered transport guidance for fans travelling to and from the stadi
 from app.core.prompts import build_transport_prompt
 from app.services import groq_service
 from app.services.intent_router import get_fast_factual_response
-from app.utils.helpers import format_data_for_prompt, get_transport_data, sanitize_input
+from app.utils.helpers import (format_data_for_prompt, get_transport_data,
+                               sanitize_input)
 from app.utils.logger import logger
 
 

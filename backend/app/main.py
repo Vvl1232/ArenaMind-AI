@@ -5,14 +5,7 @@ Enterprise-grade AI platform for FIFA World Cup 2026
 stadium operations and fan experience.
 """
 
-from fastapi import FastAPI, HTTPException, Request, Response
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.middleware.gzip import GZipMiddleware
-from slowapi import Limiter, _rate_limit_exceeded_handler
-from slowapi.errors import RateLimitExceeded
-from slowapi.middleware import SlowAPIMiddleware
-from slowapi.util import get_remote_address
-from fastapi.responses import JSONResponse
+import typing
 
 from app.api.accessibility import router as accessibility_router
 from app.api.assistant import router as assistant_router
@@ -23,6 +16,14 @@ from app.core.config import settings
 from app.schemas.response import ErrorResponse, HealthResponse
 from app.utils.helpers import get_crowd_data, get_stadium_data
 from app.utils.logger import logger
+from fastapi import FastAPI, HTTPException, Request, Response
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
+from fastapi.responses import JSONResponse
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.errors import RateLimitExceeded
+from slowapi.middleware import SlowAPIMiddleware
+from slowapi.util import get_remote_address
 
 # Initialize rate limiter
 limiter = Limiter(key_func=get_remote_address, default_limits=["100/minute"])
@@ -42,17 +43,22 @@ app.add_middleware(SlowAPIMiddleware)
 
 
 @app.exception_handler(Exception)
-async def global_exception_handler(request: Request, exc: Exception):
+async def global_exception_handler(request: Request, exc: Exception) -> JSONResponse:
     logger.error("Unhandled Exception: %s", str(exc), exc_info=True)
     return JSONResponse(
         status_code=500,
-        content={"detail": "Internal server error. Please try again later.", "error_code": "INTERNAL_ERROR"},
+        content={
+            "detail": "Internal server error. Please try again later.",
+            "error_code": "INTERNAL_ERROR",
+        },
     )
 
 
 # Security Headers Middleware
 @app.middleware("http")
-async def add_security_headers(request: Request, call_next):
+async def add_security_headers(
+    request: Request, call_next: typing.Callable[[Request], typing.Awaitable[Response]]
+) -> Response:
     response = await call_next(request)
     response.headers["X-Content-Type-Options"] = "nosniff"
     response.headers["X-Frame-Options"] = "DENY"
@@ -106,7 +112,7 @@ async def health_check(response: Response) -> HealthResponse:
     summary="Get stadium data",
     description="Return the full stadium dataset including gates, food courts, restrooms, and facilities.",
 )
-async def get_stadium(response: Response) -> dict:
+async def get_stadium(response: Response) -> dict[str, typing.Any]:
     """Return the full stadium dataset."""
     try:
         response.headers["Cache-Control"] = "public, max-age=300"
@@ -129,7 +135,7 @@ async def get_stadium(response: Response) -> dict:
     summary="Get crowd data",
     description="Return the current crowd intelligence data including zone occupancy and risk levels.",
 )
-async def get_crowd(response: Response) -> dict:
+async def get_crowd(response: Response) -> dict[str, typing.Any]:
     """Return the current crowd intelligence data."""
     try:
         response.headers["Cache-Control"] = "public, max-age=10"

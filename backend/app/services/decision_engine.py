@@ -7,12 +7,8 @@ to provide unified AI responses for the stadium assistant.
 from app.core.prompts import build_assistant_prompt
 from app.services import groq_service
 from app.services.intent_router import detect_intent, get_fast_factual_response
-from app.utils.helpers import (
-    format_data_for_prompt,
-    get_crowd_data,
-    get_stadium_data,
-    sanitize_input,
-)
+from app.utils.helpers import (format_data_for_prompt, get_crowd_data,
+                               get_stadium_data, sanitize_input)
 from app.utils.logger import logger
 
 

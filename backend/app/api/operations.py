@@ -4,12 +4,11 @@ StadiumPilot AI — Operations API Router.
 Handles operational copilot endpoints for organizers and staff.
 """
 
-from fastapi import APIRouter, HTTPException
-
 from app.schemas.request import OperationsRequest
 from app.schemas.response import ErrorResponse, OperationsResponse
 from app.services.operations_service import get_operations_recommendation
 from app.utils.logger import logger
+from fastapi import APIRouter, HTTPException
 
 router = APIRouter(prefix="/api", tags=["Operations"])
 

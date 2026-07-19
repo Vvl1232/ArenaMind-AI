@@ -4,13 +4,14 @@ StadiumPilot AI — Transport API Router.
 Handles transport information and guidance endpoints.
 """
 
-from fastapi import APIRouter, HTTPException, Response
+import typing
 
 from app.schemas.request import TransportRequest
 from app.schemas.response import ErrorResponse, TransportResponse
 from app.services.transport_service import get_transport_info
 from app.utils.helpers import get_transport_data
 from app.utils.logger import logger
+from fastapi import APIRouter, HTTPException, Response
 
 router = APIRouter(prefix="/api", tags=["Transport"])
 
@@ -20,7 +21,7 @@ router = APIRouter(prefix="/api", tags=["Transport"])
     summary="Get transport data",
     description="Retrieve current transport availability and status.",
 )
-async def get_transport(response: Response) -> dict:
+async def get_transport(response: Response) -> dict[str, typing.Any]:
     """Return the current transport data."""
     try:
         response.headers["Cache-Control"] = "public, max-age=300"

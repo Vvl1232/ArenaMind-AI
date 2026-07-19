@@ -6,7 +6,8 @@ Provides AI-powered accessibility assistance for fans with special needs.
 
 from app.core.prompts import build_accessibility_prompt
 from app.services import groq_service
-from app.utils.helpers import format_data_for_prompt, get_stadium_data, sanitize_input
+from app.utils.helpers import (format_data_for_prompt, get_stadium_data,
+                               sanitize_input)
 from app.utils.logger import logger
 
 

@@ -4,7 +4,8 @@
     "location": "East Rutherford, New Jersey, USA",
     "capacity": 82500,
     "event": "FIFA World Cup 2026 - Final",
-    "coordinates": { "lat": 40.8128, "lng": -74.0742 }
+    "coordinates": { "lat": 40.8128, "lng": -74.0742 },
+    "sustainability": { "waste_diversion_rate": "82%", "renewable_energy_share": "100%", "water_recycling_active": true }
   },
   "gates": [
     { "id": "GA1", "name": "Gate A1", "zone": "North", "floor": 1, "status": "open", "crowd_level": 72, "wait_time_min": 8, "accessible": true, "coordinates": { "lat": 40.8138, "lng": -74.0752 } },
@@ -67,5 +68,21 @@
   "lost_and_found": [
     { "id": "LF1", "name": "Main Lost & Found Office", "zone": "North", "floor": 1, "open": true, "hours": "10:00 AM - 11:00 PM", "phone": "+1-555-FIFA-LOST", "coordinates": { "lat": 40.8138, "lng": -74.0749 } },
     { "id": "LF2", "name": "South Collection Point", "zone": "South", "floor": 1, "open": true, "hours": "12:00 PM - 10:00 PM", "phone": "+1-555-FIFA-LOST", "coordinates": { "lat": 40.8118, "lng": -74.0741 } }
-  ]
+  ],
+  "safe_assembly_points": [
+    { "id": "SAP1", "name": "North Lot Assembly A", "zone": "North", "capacity": 15000, "status": "clear", "coordinates": { "lat": 40.8150, "lng": -74.0750 } },
+    { "id": "SAP2", "name": "South Park Assembly B", "zone": "South", "capacity": 20000, "status": "clear", "coordinates": { "lat": 40.8100, "lng": -74.0740 } }
+  ],
+  "accessibility_facilities": {
+    "elevators": [
+      { "id": "ELV1", "name": "North Main Elevator", "zone": "North", "status": "operational", "wait_time_min": 2, "floors": [1, 2, 3] },
+      { "id": "ELV2", "name": "East Express Elevator", "zone": "East", "status": "operational", "wait_time_min": 1, "floors": [1, 2] },
+      { "id": "ELV3", "name": "South Accessible Elevator", "zone": "South", "status": "operational", "wait_time_min": 4, "floors": [1, 2] },
+      { "id": "ELV4", "name": "West VIP Elevator", "zone": "West", "status": "under_maintenance", "wait_time_min": 0, "floors": [1, 2, 3] }
+    ],
+    "sensory_rooms": [
+      { "id": "SR1", "name": "Quiet Room - East", "zone": "East", "floor": 1, "capacity": 15, "current_occupancy": 4, "available": true, "staffed": true },
+      { "id": "SR2", "name": "Sensory Haven - West", "zone": "West", "floor": 2, "capacity": 10, "current_occupancy": 8, "available": true, "staffed": true }
+    ]
+  }
 }

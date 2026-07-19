@@ -21,12 +21,13 @@ export const getNavigation = async (
   origin,
   destination,
   accessible = false,
+  options = {}
 ) => {
   const data = await apiClient.post("/api/navigate", {
     origin,
     destination,
     accessible,
-  });
+  }, options);
   return data;
 };
 
@@ -37,52 +38,53 @@ export const getOperationsRecommendation = async (
   scenario,
   priority = "medium",
   zone = null,
+  options = {}
 ) => {
   const data = await apiClient.post("/api/operations", {
     scenario,
     priority,
     zone,
-  });
+  }, options);
   return data;
 };
 
 /**
  * Get transport data.
  */
-export const getTransportData = async () => {
-  const data = await apiClient.get("/api/transport");
+export const getTransportData = async (options = {}) => {
+  const data = await apiClient.get("/api/transport", options);
   return data;
 };
 
 /**
  * Ask transport AI.
  */
-export const askTransport = async (query) => {
-  const data = await apiClient.post("/api/transport/ask", { query });
+export const askTransport = async (query, options = {}) => {
+  const data = await apiClient.post("/api/transport/ask", { query }, options);
   return data;
 };
 
 /**
  * Get accessibility guidance.
  */
-export const getAccessibilityInfo = async (query) => {
-  const data = await apiClient.post("/api/accessibility", { query });
+export const getAccessibilityInfo = async (query, options = {}) => {
+  const data = await apiClient.post("/api/accessibility", { query }, options);
   return data;
 };
 
 /**
  * Get stadium data.
  */
-export const getStadiumData = async () => {
-  const data = await apiClient.get("/api/stadium");
+export const getStadiumData = async (options = {}) => {
+  const data = await apiClient.get("/api/stadium", options);
   return data;
 };
 
 /**
  * Get crowd data.
  */
-export const getCrowdData = async () => {
-  const data = await apiClient.get("/api/crowd");
+export const getCrowdData = async (options = {}) => {
+  const data = await apiClient.get("/api/crowd", options);
   return data;
 };
 

@@ -36,7 +36,7 @@ const RISK_COLORS = {
 };
 
 const DashboardSkeleton = () => (
-  <div className="p-4 lg:p-8 max-w-7xl mx-auto space-y-6 animate-pulse">
+  <div className="p-4 lg:p-8 max-w-7xl mx-auto space-y-6 animate-pulse" role="status" aria-live="polite" aria-label="Loading dashboard...">
     <div>
       <div className="h-8 bg-bg-secondary rounded w-1/4 mb-2" />
       <div className="h-4 bg-bg-secondary rounded w-1/3" />
@@ -420,6 +420,15 @@ const Dashboard = () => {
                     ))}
                   </div>
                 )}
+                
+                {zone.recommendation && (
+                  <div className="mt-3 p-3 rounded-lg bg-fifa-teal/10 border border-fifa-teal/20">
+                    <p className="text-xs font-bold text-fifa-teal mb-1 uppercase tracking-wider">Suggested Action</p>
+                    <p className="text-sm font-medium text-text-primary leading-relaxed">
+                      {zone.recommendation}
+                    </p>
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
@@ -464,6 +473,11 @@ const Dashboard = () => {
                     <p className="text-xs font-medium text-text-muted mt-0.5 truncate">
                       {spot.action_required}
                     </p>
+                    {spot.estimated_clear_time_min && (
+                      <p className="text-[10px] font-bold text-fifa-teal mt-1">
+                        Est. Clear: {spot.estimated_clear_time_min} min
+                      </p>
+                    )}
                   </div>
                   <div className="text-right pl-2 border-l border-border">
                     <span

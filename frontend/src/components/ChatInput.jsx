@@ -31,6 +31,9 @@ const ChatInput = () => {
       {/* Quick Prompts */}
       {showQuick && (
         <motion.div
+          id="quick-prompts-panel"
+          role="region"
+          aria-label="Quick Prompts"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           className="mb-3 flex flex-wrap gap-2"
@@ -61,11 +64,15 @@ const ChatInput = () => {
           }`}
           title="Quick prompts"
           aria-label="Toggle quick prompts"
+          aria-expanded={showQuick}
+          aria-controls="quick-prompts-panel"
         >
           <HiLightningBolt className="w-5 h-5" />
         </button>
 
+        <label htmlFor="chat-input" className="sr-only">Ask StadiumPilot AI</label>
         <input
+          id="chat-input"
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}

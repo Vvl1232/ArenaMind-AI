@@ -126,6 +126,29 @@ const CrowdChart = ({ data }) => {
           </Bar>
         </BarChart>
       </ResponsiveContainer>
+
+      {/* Screen Reader Fallback Table */}
+      <table className="sr-only">
+        <caption>Real-time crowd density by zone</caption>
+        <thead>
+          <tr>
+            <th scope="col">Zone</th>
+            <th scope="col">Occupancy</th>
+            <th scope="col">Count</th>
+            <th scope="col">Risk Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          {chartData.map((zone, i) => (
+            <tr key={i}>
+              <td>{zone.name}</td>
+              <td>{zone.occupancy}%</td>
+              <td>{zone.count?.toLocaleString()}</td>
+              <td>{zone.risk}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </motion.div>
   );
 };

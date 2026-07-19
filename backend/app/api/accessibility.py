@@ -4,12 +4,11 @@ StadiumPilot AI — Accessibility API Router.
 Handles accessibility assistance endpoints.
 """
 
-from fastapi import APIRouter, HTTPException
-
 from app.schemas.request import AccessibilityRequest
 from app.schemas.response import AccessibilityResponse, ErrorResponse
 from app.services.accessibility_service import get_accessibility_info
 from app.utils.logger import logger
+from fastapi import APIRouter, HTTPException
 
 router = APIRouter(prefix="/api", tags=["Accessibility"])
 

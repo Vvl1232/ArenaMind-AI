@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
  */
 
 import { memo } from "react";
-import { motion } from "framer-motion";
+import AnimatedCard from "./AnimatedCard";
 import { HiClock, HiLocationMarker, HiCurrencyDollar } from "react-icons/hi";
 
 const statusColors = {
@@ -33,12 +33,7 @@ const TransportCard = ({ item, type, delay = 0 }) => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay, duration: 0.3 }}
-      className="glass-card-hover p-4"
-    >
+    <AnimatedCard delay={delay}>
       <div className="flex items-start justify-between mb-3">
         <div className="flex items-center gap-2">
           <span className="text-xl">{typeIcons[type] || "🚌"}</span>
@@ -74,7 +69,7 @@ const TransportCard = ({ item, type, delay = 0 }) => {
           {item.notes}
         </p>
       )}
-    </motion.div>
+    </AnimatedCard>
   );
 };
 

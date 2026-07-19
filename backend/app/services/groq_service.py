@@ -5,10 +5,9 @@ Handles all communication with the Groq API using the async client
 to prevent blocking Vercel's serverless runtime.
 """
 
-from groq import AsyncGroq, RateLimitError
-
 from app.core.config import settings
 from app.utils.logger import logger
+from groq import AsyncGroq, RateLimitError
 
 # Initialize async Groq client
 client = None

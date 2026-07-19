@@ -4,12 +4,11 @@ StadiumPilot AI — Navigation API Router.
 Handles navigation and wayfinding endpoints.
 """
 
-from fastapi import APIRouter, HTTPException
-
 from app.schemas.request import NavigationRequest
 from app.schemas.response import ErrorResponse, NavigationResponse
 from app.services.navigation_service import get_navigation
 from app.utils.logger import logger
+from fastapi import APIRouter, HTTPException
 
 router = APIRouter(prefix="/api", tags=["Navigation"])
 

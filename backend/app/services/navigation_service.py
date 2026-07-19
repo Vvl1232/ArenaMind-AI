@@ -6,12 +6,8 @@ Provides AI-powered wayfinding and route guidance inside the stadium.
 
 from app.core.prompts import build_navigation_prompt
 from app.services import groq_service
-from app.utils.helpers import (
-    format_data_for_prompt,
-    get_crowd_data,
-    get_stadium_data,
-    sanitize_input,
-)
+from app.utils.helpers import (format_data_for_prompt, get_crowd_data,
+                               get_stadium_data, sanitize_input)
 from app.utils.logger import logger
 
 

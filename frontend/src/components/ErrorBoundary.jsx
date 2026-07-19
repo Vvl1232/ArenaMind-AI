@@ -18,7 +18,7 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="flex flex-col items-center justify-center min-h-[50vh] p-8 text-center">
+        <div className="flex flex-col items-center justify-center min-h-[50vh] p-8 text-center" role="alert" aria-live="assertive">
           <div className="glass-card p-8 max-w-md w-full">
             <h2 className="text-xl font-bold text-red-500 mb-4">
               Something went wrong.

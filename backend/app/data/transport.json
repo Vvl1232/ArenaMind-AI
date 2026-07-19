@@ -14,6 +14,7 @@
       "fare": "$5.50",
       "accessible": true,
       "destination": "Secaucus Junction",
+      "eco_impact": { "carbon_emission_kg": 0.5, "eco_friendly": true },
       "notes": "Connect to NJ Transit / Amtrak / PATH at Secaucus"
     },
     {
@@ -29,6 +30,7 @@
       "fare": "$7.00",
       "accessible": true,
       "destination": "Penn Station New York",
+      "eco_impact": { "carbon_emission_kg": 0.8, "eco_friendly": true },
       "notes": "Non-stop express to Manhattan — FIFA special service"
     }
   ],
@@ -46,7 +48,8 @@
       "fare": "Free (FIFA Pass)",
       "accessible": true,
       "destination": "Times Square, NYC",
-      "notes": "Complimentary shuttle for FIFA ticket holders"
+      "eco_impact": { "carbon_emission_kg": 1.2, "eco_friendly": true },
+      "notes": "Complimentary EV shuttle for FIFA ticket holders"
     },
     {
       "id": "BUS2",
@@ -90,6 +93,7 @@
       "estimated_wait_min": 12,
       "estimated_fare_to_nyc": "$55-$75",
       "accessible_vehicles": true,
+      "eco_impact": { "carbon_emission_kg": 8.5, "eco_friendly": false },
       "notes": "Licensed taxi stand — fixed rates to major destinations"
     }
   ],

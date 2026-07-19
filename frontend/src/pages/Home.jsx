@@ -61,7 +61,7 @@ const features = [
 
 const Home = () => {
   return (
-    <main className="flex-1 overflow-y-auto" role="main" aria-label="StadiumPilot AI Home">
+    <div className="flex-1 overflow-y-auto" role="region" aria-label="StadiumPilot AI Home">
       <Helmet>
         <title>StadiumPilot AI — Home</title>
         <meta name="description" content="Welcome to StadiumPilot AI, the definitive intelligence platform for the FIFA World Cup." />
@@ -173,7 +173,7 @@ const Home = () => {
           Powered by Groq · React · FastAPI
         </p>
       </motion.footer>
-    </main>
+    </div>
   );
 };
 

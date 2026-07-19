@@ -5,10 +5,9 @@ StadiumPilot AI — Pytest Fixtures.
 from unittest.mock import AsyncMock, patch
 
 import pytest
-from fastapi.testclient import TestClient
-
 from app.main import app
 from app.utils.helpers import clear_data_cache
+from fastapi.testclient import TestClient
 
 
 @pytest.fixture

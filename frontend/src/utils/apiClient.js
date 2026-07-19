@@ -21,7 +21,23 @@ apiClient.interceptors.request.use(
 // Global Response Interceptor
 apiClient.interceptors.response.use(
   (response) => response.data,
-  (error) => {
+  async (error) => {
+    const config = error.config;
+    
+    // Retry Logic: max 2 retries
+    if (config && (!config._retryCount || config._retryCount < 2)) {
+      if (error.code === 'ECONNABORTED' || error.message === 'Network Error' || (error.response && error.response.status >= 500)) {
+        config._retryCount = config._retryCount || 0;
+        config._retryCount += 1;
+        
+        // Exponential backoff
+        const delay = Math.pow(2, config._retryCount) * 1000;
+        await new Promise((resolve) => setTimeout(resolve, delay));
+        
+        return apiClient(config);
+      }
+    }
+
     const errorMsg =
       error.response?.data?.detail ||
       error.message ||

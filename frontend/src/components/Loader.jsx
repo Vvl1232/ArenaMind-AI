@@ -9,7 +9,7 @@ const Loader = ({ text = "Thinking...", variant = "default" }) => {
   const isLight = variant === "light";
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2" role="status" aria-live="polite" aria-label={text || "Loading"}>
       <div className="flex gap-1.5">
         {[0, 1, 2].map((i) => (
           <motion.div

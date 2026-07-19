@@ -36,7 +36,7 @@ const FeatureCard = ({
     >
       <Link
         to={link}
-        className={`block p-6 rounded-2xl bg-gradient-to-br ${colorMap[color]} border backdrop-blur-sm transition-all duration-300 h-full`}
+        className={`block p-6 rounded-2xl bg-gradient-to-br ${colorMap[color]} border backdrop-blur-sm transition-all duration-300 h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fifa-purple`}
       >
         <div className="text-3xl mb-4">{icon}</div>
         <h3 className="text-lg font-bold text-black dark:text-white mb-2">

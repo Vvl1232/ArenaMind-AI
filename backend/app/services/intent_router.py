@@ -6,11 +6,10 @@ and serves direct factual responses from local JSON data when possible,
 bypassing the Groq API to save quota and reduce latency.
 """
 
-from app.utils.helpers import (
-    get_stadium_data,
-    get_transport_data,
-    _INJECTION_PATTERN,
-)
+import typing
+
+from app.utils.helpers import (_INJECTION_PATTERN, get_stadium_data,
+                               get_transport_data)
 from app.utils.logger import logger
 
 INTENT_KEYWORDS = {
@@ -45,6 +44,8 @@ INTENT_KEYWORDS = {
         "injured",
         "defibrillator",
         "ambulance",
+        "heart attack",
+        "lost child",
     ],
     "transport": [
         "transport",
@@ -77,6 +78,8 @@ INTENT_KEYWORDS = {
         "evacuate",
         "staff",
         "volunteer",
+        "fire",
+        "bottleneck",
     ],
     "sustainability": [
         "sustainability",
@@ -128,7 +131,9 @@ def detect_intent(query: str) -> tuple[str, float]:
     return best_intent, max_confidence
 
 
-def find_entity_by_name(query: str, items: list, name_key: str = "name") -> dict | None:
+def find_entity_by_name(
+    query: str, items: list[dict[str, typing.Any]], name_key: str = "name"
+) -> dict[str, typing.Any] | None:
     """Find a specific entity by matching the query against the item's name/id."""
     query_clean = query.lower().replace("?", "").replace(".", "").strip()
 

@@ -3,9 +3,8 @@ StadiumPilot AI — Schema Validation Tests.
 """
 
 import pytest
-from pydantic import ValidationError
-
 from app.schemas.request import ChatRequest, OperationsRequest
+from pydantic import ValidationError
 
 
 def test_chat_request_validation():

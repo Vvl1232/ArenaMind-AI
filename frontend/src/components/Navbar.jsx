@@ -49,7 +49,7 @@ const PAGE_META = {
   },
 };
 
-const Navbar = ({ onToggleSidebar }) => {
+const Navbar = ({ onToggleSidebar, sidebarOpen }) => {
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
 
@@ -60,6 +60,7 @@ const Navbar = ({ onToggleSidebar }) => {
 
   return (
     <motion.nav
+      aria-label="Top Navigation"
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       className="fixed top-4 left-4 right-4 lg:left-64 lg:right-4 z-50 h-16 bg-bg-primary/70 backdrop-blur-2xl border border-border rounded-2xl shadow-sm"
@@ -71,6 +72,7 @@ const Navbar = ({ onToggleSidebar }) => {
             onClick={onToggleSidebar}
             className="lg:hidden shrink-0 p-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-bg-elevated transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary"
             aria-label="Toggle Sidebar"
+            aria-expanded={sidebarOpen}
           >
             <HiMenuAlt3 className="w-5 h-5" />
           </button>
@@ -90,7 +92,7 @@ const Navbar = ({ onToggleSidebar }) => {
           <button
             onClick={toggleTheme}
             className="p-2 rounded-lg text-text-secondary hover:text-accent-primary hover:bg-bg-elevated transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary"
-            aria-label="Toggle Theme"
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
           >
             {theme === "dark" ? (
               <HiSun className="w-5 h-5" />
@@ -110,6 +112,6 @@ const Navbar = ({ onToggleSidebar }) => {
   );
 };
 
-Navbar.propTypes = { onToggleSidebar: PropTypes.func.isRequired };
+Navbar.propTypes = { onToggleSidebar: PropTypes.func.isRequired, sidebarOpen: PropTypes.bool };
 
 export default Navbar;

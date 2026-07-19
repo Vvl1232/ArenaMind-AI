@@ -68,11 +68,11 @@
     }
   ],
   "hotspots": [
-    { "location": "Gate B1 Entrance", "severity": "critical", "density": 0.92, "action_required": "Immediate crowd redirection needed" },
-    { "location": "Gate A1 Corridor", "severity": "high", "density": 0.85, "action_required": "Deploy additional staff" },
-    { "location": "Goal Line Grill Queue", "severity": "high", "density": 0.80, "action_required": "Open secondary service line" },
-    { "location": "Restroom B-East", "severity": "moderate", "density": 0.75, "action_required": "Redirect to Upper Level restrooms" },
-    { "location": "North Concourse", "severity": "moderate", "density": 0.70, "action_required": "Monitor and manage flow" }
+    { "location": "Gate B1 Entrance", "severity": "critical", "density": 0.92, "action_required": "Immediate crowd redirection needed", "estimated_clear_time_min": 25 },
+    { "location": "Gate A1 Corridor", "severity": "high", "density": 0.85, "action_required": "Deploy additional staff", "estimated_clear_time_min": 15 },
+    { "location": "Goal Line Grill Queue", "severity": "high", "density": 0.80, "action_required": "Open secondary service line", "estimated_clear_time_min": 12 },
+    { "location": "Restroom B-East", "severity": "moderate", "density": 0.75, "action_required": "Redirect to Upper Level restrooms", "estimated_clear_time_min": 8 },
+    { "location": "North Concourse", "severity": "moderate", "density": 0.70, "action_required": "Monitor and manage flow", "estimated_clear_time_min": 5 }
   ],
   "incidents": [
     { "id": "INC001", "type": "medical", "zone": "East", "status": "resolved", "time": "17:45:00Z", "description": "Fan fainted near Section 210 — paramedics responded in 3 min" },

@@ -3,8 +3,8 @@ StadiumPilot AI — Utility Tests.
 """
 
 import pytest
-
-from app.utils.helpers import format_data_for_prompt, load_json_data, sanitize_input
+from app.utils.helpers import (format_data_for_prompt, load_json_data,
+                               sanitize_input)
 
 
 def test_sanitize_input():
@@ -36,18 +36,21 @@ def test_format_data_for_prompt():
 
 
 def test_load_json_data_missing(tmp_path):
-    import json
     missing_file = tmp_path / "missing.json"
     with pytest.raises(FileNotFoundError):
         load_json_data(missing_file)
 
+
 def test_load_json_data_invalid(tmp_path):
     import json
+
     invalid_file = tmp_path / "invalid.json"
     invalid_file.write_text("invalid json")
     with pytest.raises(json.JSONDecodeError):
         load_json_data(invalid_file)
 
+
 def test_clear_data_cache():
     from app.utils.helpers import clear_data_cache
+
     clear_data_cache()

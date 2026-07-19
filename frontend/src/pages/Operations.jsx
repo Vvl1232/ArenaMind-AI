@@ -11,6 +11,7 @@ import {
   HiLightningBolt,
 } from "react-icons/hi";
 import { getOperationsRecommendation } from "../services/api";
+import PageHeader from "../components/PageHeader";
 import Loader from "../components/Loader";
 
 const presetScenarios = [
@@ -93,21 +94,13 @@ const Operations = () => {
   }, []);
 
   return (
-    <div className="p-4 lg:p-8 max-w-7xl mx-auto space-y-6">
+    <div className="p-4 lg:p-8 max-w-7xl mx-auto space-y-6" role="region" aria-label="Operations Copilot">
       {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        <h1 className="text-2xl font-bold text-text-primary flex items-center gap-2">
-          <HiShieldCheck className="w-7 h-7 text-fifa-teal" />
-          Operations Copilot
-        </h1>
-        <p className="text-sm text-text-muted mt-1">
-          AI-powered operational intelligence for organizers, security, and
-          venue managers
-        </p>
-      </motion.div>
+      <PageHeader
+        title="Operations Copilot"
+        description="AI-powered operational intelligence for organizers, security, and venue managers"
+        icon={<HiShieldCheck className="w-7 h-7 text-fifa-teal" />}
+      />
 
       {/* Preset Scenarios */}
       <motion.div

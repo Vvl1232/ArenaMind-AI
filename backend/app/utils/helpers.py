@@ -6,6 +6,7 @@ Data loading and general utility functions.
 
 import json
 import re
+import typing
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
@@ -36,7 +37,7 @@ def _load_json_cached(file_path: str) -> dict[str, Any]:
     path = Path(file_path)
     try:
         with open(path, "r", encoding="utf-8") as f:
-            data = json.load(f)
+            data = typing.cast(dict[str, Any], json.load(f))
         logger.info("Loaded and cached data from %s", path.name)
         return data
     except FileNotFoundError:

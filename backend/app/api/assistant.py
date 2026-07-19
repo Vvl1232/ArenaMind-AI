@@ -4,12 +4,11 @@ StadiumPilot AI — Assistant API Router.
 Handles the main AI chat endpoint.
 """
 
-from fastapi import APIRouter, HTTPException
-
 from app.schemas.request import ChatRequest
 from app.schemas.response import ChatResponse, ErrorResponse
 from app.services.decision_engine import process_chat
 from app.utils.logger import logger
+from fastapi import APIRouter, HTTPException
 
 router = APIRouter(prefix="/api", tags=["Assistant"])
 
